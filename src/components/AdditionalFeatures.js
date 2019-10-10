@@ -4,18 +4,22 @@ import AdditionalFeature from './AdditionalFeature';
 const AdditionalFeatures = props => {
   return (
     <div className="content">
-      <h4>Additional Features</h4>
-      {props.store.length ? (
-        <ol type="1">
-          {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
-          ))}
-        </ol>
-      ) : (
-        <p>Nice looking car!</p>
-      )}
+        <h4>Additional Features</h4>
+        {props.store.length ? (
+            <ol type="1">
+                {props.store.map(item => (
+                    <AdditionalFeature
+                        key={item.id}
+                        feature={item}
+                        buyItem={props.buyItem}
+                    />
+                ))}
+            </ol>
+        ) : (
+            <p>Nice car!</p>
+        )}
     </div>
-  );
+);
 };
 
 export default AdditionalFeatures;
